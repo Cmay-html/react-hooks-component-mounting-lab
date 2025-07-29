@@ -10,31 +10,8 @@ class App extends Component {
   }
 
 
-  //Your code here:
-
-
-
-
-
-
-
-
-
-  // No need to modify anything in render or the class methods below
-  // Unless, of course, you're curious about how it all works
-  render() {
-
-    return (
-      <div className="App">
-        <h1>MultiTimer</h1>
-        <button onClick={this.handleAddTimer}>Add New Timer</button>
-
-        <div className="TimerGrid">
-          {this.renderTimers()}
-        </div>
-
-      </div>
-    );
+  componentDidMount() {
+    this.handleAddTimer();
   }
 
   // returns array of components written in JSX, mapped from this.state.timerIDs
@@ -56,6 +33,17 @@ class App extends Component {
     }))
   }
 
+  render() {
+    return (
+      <div className="App">
+        <h1>MultiTimer</h1>
+        <button onClick={this.handleAddTimer}>Add Timer</button>
+        <div className="TimerGrid">
+          {this.renderTimers()}
+        </div>
+      </div>
+    );
+  }
 
 }
 
